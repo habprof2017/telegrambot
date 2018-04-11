@@ -51,7 +51,7 @@ def productosMedios(args):
         semilla1 = semilla2
         semilla2 = int(x)
 
-    print (salida)
+    print(salida)
     return salida
 
 
@@ -147,11 +147,20 @@ def metMultiplicadorCte(bot, update, args):  # /met3
 
 
 def metAlgoritmoLineal(bot, update, args):  # /met4
-    metodo = 'Metodo del Algoritmo Lineal'
-    titulo = "Xo = {} | a = {} | c = {} | m = {} | n = {}".format(
-        args[0], args[1], args[2], args[3], args[4])  # semilla a c m tamaño
-    numeros = algoritmoLineal(args)
-    bot.send_message(chat_id=update.message.chat_id, text=metodo)
-    bot.send_message(chat_id=update.message.chat_id, text="D = 4 | n = 10")
-    bot.send_message(chat_id=update.message.chat_id, text=titulo)
-    bot.send_message(chat_id=update.message.chat_id, text=numeros)
+    if not len(args) == 0:
+        metodo = 'Metodo del Algoritmo Lineal'
+        titulo = "Xo = {} | a = {} | c = {} | m = {} | n = {}".format(
+            args[0], args[1], args[2], args[3], args[4])  # semilla a c m cant
+        numeros = algoritmoLineal(args)
+        bot.send_message(chat_id=update.message.chat_id, text=metodo)
+        bot.send_message(chat_id=update.message.chat_id, text="D = 4 | n = 10")
+        bot.send_message(chat_id=update.message.chat_id, text=titulo)
+        bot.send_message(chat_id=update.message.chat_id, text=numeros)
+    else:
+        m1 = 'Error faltan valores'
+        ej = '/met4 18 17 13 64 10'
+        txt = "Semilla: 18, a: 17, c: 13, m: 64 ,n: 10"
+        bot.send_message(chat_id=update.message.chat_id, text=m1)
+        bot.send_message(chat_id=update.message.chat_id, text='Ejemplo:')
+        bot.send_message(chat_id=update.message.chat_id, text=txt)
+        bot.send_message(chat_id=update.message.chat_id, text=ej)
