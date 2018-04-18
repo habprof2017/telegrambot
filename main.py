@@ -1,5 +1,6 @@
 from algoritmos import *
 from telegram.ext import Updater, CommandHandler
+import logger
 
 
 def main():
@@ -47,3 +48,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    logger.logging.debug('Comienza el programa')
