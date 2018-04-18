@@ -7,7 +7,7 @@ if platform.platform().startswith('Windows'):
                                os.getenv("HOMEPATH"),
                                'simulacion.log')
 else:
-    fichero_log = os.path.join(os.getenv('HOME'), 'simulacion.log')
+    fichero_log = os.path.join('/app', 'simulacion.log')
 
 
 FORM = '%(asctime)s : %(pathname)s : %(filename)s : %(module)s : %(message)s'
