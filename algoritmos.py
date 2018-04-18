@@ -1,7 +1,11 @@
+import logger
+
+
 def start(bot, update):
     va = 'estoy vivo!'
     msj = 'Hola {} {}'.format(update.message.from_user.first_name, va)
     bot.send_message(chat_id=update.message.chat_id, text=msj)
+    logger.logging.info(__name__)
 
 
 def armarNumero(digitos):
