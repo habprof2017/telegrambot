@@ -11,6 +11,7 @@ def main():
 
     handlers = [  # saludar es la funcion. /saluda es el comando en telegram
         CommandHandler('start', start),
+        CommandHandler('r', unRandom),
         CommandHandler('saluda', saludar),
         CommandHandler('met1', metCuadradosMedios, pass_args=True),
         CommandHandler('met2', metProductosMedios, pass_args=True),
