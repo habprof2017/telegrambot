@@ -1,6 +1,15 @@
+import random
+
 def start(bot, update):
     va = 'estoy vivo!'
     msj = 'Hola {} {}'.format(update.message.from_user.first_name, va)
+    bot.send_message(chat_id=update.message.chat_id, text=msj)
+   
+def unRandom(bot, update):
+    msj = []
+    for i in range(10):
+        msj.append(round(random.random(),2))
+    
     bot.send_message(chat_id=update.message.chat_id, text=msj)
 
 
